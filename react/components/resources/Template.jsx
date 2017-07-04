@@ -26,7 +26,10 @@ export default class category extends Component {
 
   componentWillReceiveProps (newProp) {
     getLinks(newProp.location.pathname)
-      .then(links => (this.setState({ links: links.data })))
+      .then(links => (this.setState({
+        category: newProp.location.pathname,
+        links: links.data
+      })))
       .catch(console.error);
   }
 
@@ -60,19 +63,3 @@ export default class category extends Component {
     )
   }
 }
-
-          // {/***** tile *****/}
-          // <Tile separator="top" align="start" wide={true}>
-          //   <Header size="small" pad="small">
-          //     <Heading tag="h3" strong={true} margin="none">
-          //       <a href={'{url}'}>
-          //         {'{title}'}
-          //       </a> {'{type}'}
-          //     </Heading>
-          //   </Header>
-          //   <Box pad="small">
-          //     <Paragraph margin="none">
-          //       by {'{author}'}
-          //     </Paragraph>
-          //   </Box>
-          // </Tile>

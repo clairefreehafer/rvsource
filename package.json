@@ -12,8 +12,8 @@
     "build": "webpack",
     "build-watch": "npm run build -- -w",
     "db-init": "createdb rvsource",
-    "start": "nodemon index.js",
-    "start-watch": "nodemon index.js --watch *"
+    "start": "node index.js",
+    "start-watch": "nodemon index.js"
   },
   "dependencies": {
     "airtable": "^0.5.0",

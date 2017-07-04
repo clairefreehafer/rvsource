@@ -1,6 +1,8 @@
 const db = require('./db');
 const Sequelize = require('sequelize');
 
+const categories = ['Apps', 'Boondocking', 'Cold Weather', 'Mail', 'Maintenance', 'Internet', 'Renovating & Decorating'];
+
 const Link = db.define('link', {
   title: {
     type: Sequelize.STRING,
