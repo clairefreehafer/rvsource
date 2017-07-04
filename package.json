@@ -13,6 +13,9 @@
     "build-watch": "npm run build -- -w",
     "db-init": "createdb rvsource",
     "deploy-heroku": "bin/deploy-heroku.sh",
+    "production": {
+      "use_env_variable": "DATABASE_URL"
+    },
     "start": "node index.js",
     "start-watch": "nodemon index.js"
   },
