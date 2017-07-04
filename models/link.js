@@ -1,3 +1,31 @@
+module.exports = function(sequelize, DataTypes) {
+  const Link = sequelize.define('link', {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    author: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    url: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    category: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    types: {
+      type: DataTypes.ARRAY(DataTypes.STRING)
+    }
+  })
+
+  return Link;
+}
+
+// pre-heroku
+
 // const db = require('./db');
 // const sequelize = require('sequelize');
 
@@ -26,27 +54,3 @@
 // });
 
 // module.exports = Link;
-
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('link', {
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  author: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  url: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  category: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  types: {
-    type: DataTypes.ARRAY(DataTypes.STRING)
-  }
-})
-}

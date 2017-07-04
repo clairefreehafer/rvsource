@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const Link = require('../models/link');
+const models = require('../models/db');
 
 router.get('/:category', (req, res, next) => {
-  console.log(req.params)
-  Link.findAll({ where: {
+  models.Link.findAll({ where: {
     category: req.params.category
   }})
     .then(links => res.json(links))

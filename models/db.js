@@ -1,20 +1,3 @@
-// const sequelize = require('sequelize');
-// // const pg = require('pg');
-
-// // pg.defaults.ssl = true;
-// // pg.connect(process.env.DATABASE_URL, (err, client) => {
-// //   if (err) throw err;
-// //   console.log('Connected to postgres! Getting schemas...');
-
-// //   client
-// //     .query('SELECT table_schema,table_name FROM information_schema.tables;')
-// //     .on('row', row => {
-// //       console.log(JSON.stringify(row));
-// //     });
-// // });
-
-// module.exports = new sequelize('postgres://localhost:5432/rvsource', { logging: false });
-
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null
@@ -35,7 +18,7 @@ if (!global.hasOwnProperty('db')) {
     })
   } else {
     // the application is executed on the local machine ... use mysql
-    sequelize = new Sequelize('rvsource', 'root', null)
+    sequelize = new Sequelize('postgres://localhost:5432/rvsource', { logging: false })
   }
 
   global.db = {
@@ -46,3 +29,23 @@ if (!global.hasOwnProperty('db')) {
 }
 
 module.exports = global.db
+
+/********** old code from before trying to deploy with heroku
+// module.exports = new sequelize('postgres://localhost:5432/rvsource', { logging: false });
+
+const sequelize = require('sequelize');
+const pg = require('pg');
+
+pg.defaults.ssl = true;
+pg.connect(process.env.DATABASE_URL, (err, client) => {
+  if (err) throw err;
+  console.log('Connected to postgres! Getting schemas...');
+
+  client
+    .query('SELECT table_schema,table_name FROM information_schema.tables;')
+    .on('row', row => {
+      console.log(JSON.stringify(row));
+    });
+});
+
+**********/
