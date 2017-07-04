@@ -8,13 +8,6 @@ import { App, Box, Split } from 'grommet';
 import SidebarMenu from './components/SidebarMenu';
 import Landing from './components/Landing';
 
-import Apps from './components/resources/Apps';
-import Boondocking from './components/resources/Boondocking';
-import ColdWeather from './components/resources/ColdWeather';
-import Maintenance from './components/resources/Maintenance';
-import Internet from './components/resources/Internet';
-import Mail from './components/resources/Mail';
-import RenoDeco from './components/resources/RenoDeco';
 import Template from './components/resources/Template';
 
 render(

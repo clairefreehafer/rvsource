@@ -12,7 +12,7 @@
     "build": "webpack",
     "build-watch": "npm run build -- -w",
     "db-init": "createdb rvsource",
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "start-watch": "nodemon index.js --watch *"
   },
   "dependencies": {

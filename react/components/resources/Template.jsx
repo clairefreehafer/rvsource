@@ -13,12 +13,19 @@ export default class category extends Component {
     super();
 
     this.state = {
+      category: props.location.pathname,
       links: []
     };
   }
 
-  componentDidMount () {
-    getLinks(this.props.location.pathname)
+  componentWillMount () {
+    getLinks(this.state.category)
+      .then(links => (this.setState({ links: links.data })))
+      .catch(console.error);
+  }
+
+  componentWillReceiveProps (newProp) {
+    getLinks(newProp.location.pathname)
       .then(links => (this.setState({ links: links.data })))
       .catch(console.error);
   }
@@ -26,7 +33,7 @@ export default class category extends Component {
   render () {
     return (
       <Section>
-        <Heading tag="h2">{getTitle(this.props.location.pathname)}</Heading>
+        <Heading tag="h2">{getTitle(this.state.category)}</Heading>
         <Tiles fill={true}>
 
           {this.state.links.map(link => {
