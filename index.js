@@ -25,7 +25,7 @@ module.exports = app
 const server = app.listen(
   process.env.PORT || 1337,
   () => {
-    console.log('~~~ started http server for acdb ~~~')
+    console.log('~~~ started http server for rvsource ~~~')
     const { address, port } = server.address();
     const host = address === '::' ? 'localhost' : address;
     const urlSafeHost = host.includes(':') ? `[${host}]` : host;
