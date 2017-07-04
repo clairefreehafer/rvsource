@@ -12,7 +12,8 @@
     "build": "webpack",
     "build-watch": "npm run build -- -w",
     "db-init": "createdb rvsource",
-    "start": "node index.js",
+    "deploy-heroku": "bin/deploy-heroku.sh",
+    "start": "npm run db-init && node index.js",
     "start-watch": "nodemon index.js"
   },
   "dependencies": {
