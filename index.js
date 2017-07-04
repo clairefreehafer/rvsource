@@ -10,11 +10,14 @@ module.exports = app
   .use(bodyParser.urlencoded({ extended: false }))
   .use(bodyParser.json())
 
+  // serve api
+  .use('/api', require('./api'))
+
+  // admin
+  .use('/admin', require('./api/admin'))
+
   // serve static files
   .use(express.static(resolve(__dirname, 'public')))
-
-  // serve api
-  //.use('/api', require('./api'))
 
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, 'public', 'index.html')))
 
@@ -23,10 +26,7 @@ module.exports = app
     console.error(err);
   });
 
-console.log(db)
-
 db.sync()
-  .then(console.log)
   .then(() => {
     const server = app.listen(
       process.env.PORT || 1337,

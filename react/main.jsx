@@ -15,6 +15,7 @@ import Maintenance from './components/resources/Maintenance';
 import Internet from './components/resources/Internet';
 import Mail from './components/resources/Mail';
 import RenoDeco from './components/resources/RenoDeco';
+import Template from './components/resources/Template';
 
 render(
   <BrowserRouter>
@@ -30,6 +31,7 @@ render(
           <Route path="/internet" component={Internet}/>
           <Route path="/mail" component={Mail}/>
           <Route path="/reno-deco" component={RenoDeco}/>
+          <Route path="/template" component={Template}/>
         </Box>
       </Split>
     </App>

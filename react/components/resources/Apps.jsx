@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Header, Heading, Paragraph, Section, Tiles, Tile } from 'grommet';
 
 export default function Apps (props) {
+  console.log(props)
   return (
     <Section>
       <Heading tag="h2">Apps</Heading>
