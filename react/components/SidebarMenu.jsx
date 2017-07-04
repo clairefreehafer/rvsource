@@ -13,7 +13,7 @@ export default function SidebarMenu (props) {
       margin="none"
     >
       <Header pad="medium">
-        <Title><Link to="">clairstream</Link></Title>
+        <Title><Link to="">rvsource</Link></Title>
       </Header>
 
       <Menu inline={true} primary={true} size="small">
