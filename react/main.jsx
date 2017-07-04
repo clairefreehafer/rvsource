@@ -7,10 +7,10 @@ import { App, Box, Split } from 'grommet';
 import SidebarMenu from './components/SidebarMenu';
 
 render(
-    <App>
-      <Split>
+    <App centered={false}>
+      <Split flex={'right'}>
         <SidebarMenu />
-        <Box>
+        <Box pad={'large'}>
           poopy
 
         </Box>
