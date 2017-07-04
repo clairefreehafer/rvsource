@@ -1,27 +1,27 @@
 const db = require('./db');
-const Sequelize = require('sequelize');
+const sequelize = require('sequelize');
 
 const categories = ['Apps', 'Boondocking', 'Cold Weather', 'Mail', 'Maintenance', 'Internet', 'Renovating & Decorating'];
 
 const Link = db.define('link', {
   title: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
     allowNull: false
   },
   author: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
     allowNull: false
   },
   url: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
     allowNull: false
   },
   category: {
-    type: Sequelize.STRING,
+    type: sequelize.STRING,
     allowNull: false
   },
   types: {
-    type: Sequelize.ARRAY(Sequelize.STRING)
+    type: sequelize.ARRAY(sequelize.STRING)
   }
 });
 

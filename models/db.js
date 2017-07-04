@@ -1,3 +1,3 @@
-const Sequelize = require('Sequelize');
+const sequelize = require('sequelize');
 
-module.exports = new Sequelize('postgres://localhost:5432/rvsource', { logging: false });
+module.exports = new sequelize('postgres://localhost:5432/rvsource', { logging: false });
