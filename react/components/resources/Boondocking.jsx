@@ -5,7 +5,7 @@ import { Box, Header, Heading, Paragraph, Section, Tiles, Tile } from 'grommet';
 export default function Boondocking (props) {
   return (
     <Section>
-      <Heading tag="h2">boondocking</Heading>
+      <Heading tag="h2">Boondocking</Heading>
       <Tiles fill={true}>
 
       {/***** tile *****/}

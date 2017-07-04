@@ -5,7 +5,7 @@ import { Box, Header, Heading, Paragraph, Section, Tiles, Tile } from 'grommet';
 export default function Apps (props) {
   return (
     <Section>
-      <Heading tag="h2">apps</Heading>
+      <Heading tag="h2">Apps</Heading>
 
       <Tiles fill={true}>
         <Tile separator="top" align="start" wide={true}>
