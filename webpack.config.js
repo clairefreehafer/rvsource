@@ -8,7 +8,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.scss', '.css', '.json']
+    extensions: ['.js', '.jsx', '.scss', '.css', '.json']
   },
   module: {
     rules: [
@@ -17,12 +17,12 @@ module.exports = {
         test: /\.jsx?$/,
         use: [
           {
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            query: {
+              presets: ['es2015', 'react']
+            },
           }
         ],
-        query: {
-          presets: ['es2015', 'react']
-        },
       },
       {
         test: /\.scss$/,
@@ -41,7 +41,7 @@ module.exports = {
         ]
       },
     ]
-  }
+  },
 };
 
 // const path = require('path');
