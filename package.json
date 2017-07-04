@@ -13,7 +13,7 @@
     "build-watch": "npm run build -- -w",
     "db-init": "createdb rvsource",
     "deploy-heroku": "bin/deploy-heroku.sh",
-    "start": "npm run db-init && node index.js",
+    "start": "node index.js",
     "start-watch": "nodemon index.js"
   },
   "dependencies": {
