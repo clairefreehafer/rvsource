@@ -1,5 +1,6 @@
 import React from 'react';
-import { Anchor, Header, Menu, Sidebar, Title } from 'grommet';
+import { Anchor, Header, Label, Menu, Sidebar, Title } from 'grommet';
+// import { Anchor, Header, Label, Menu, Sidebar, Title } from 'grommet';
 
 export default function SidebarMenu (props) {
   return (
@@ -9,7 +10,7 @@ export default function SidebarMenu (props) {
       margin={'none'}
     >
       <Header pad={'medium'}>
-        <Title>rvsource</Title>
+        <Title>clairstream</Title>
       </Header>
 
       <Menu
@@ -17,15 +18,14 @@ export default function SidebarMenu (props) {
         primary={true}
         size={'small'}
       >
-        <Anchor href="#"
-          className="active"
-        >
-          test
-        </Anchor>
-        <Anchor href="#"
-        >
-          inactive
-        </Anchor>
+        <Label align={'center'}>resources</Label>
+
+        <Anchor path="/apps">Apps</Anchor>
+        <Anchor path="/boondocking">Boondocking</Anchor>
+        <Anchor path="/cold-weather">Cold Weather</Anchor>
+        <Anchor path="/maintenance">Maintenance</Anchor>
+        <Anchor path="/boondocking">inactive</Anchor>
+        <Anchor path="/boondocking">inactive</Anchor>
       </Menu>
     </Sidebar>
   )
