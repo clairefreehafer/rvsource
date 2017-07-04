@@ -1,0 +1,37 @@
+{
+  "name": "rvsource",
+  "version": "1.0.0",
+  "description": "rvsource",
+  "main": "index.js",
+  "author": "Claire Freehafer <claire.freehafer@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "7.6.0"
+  },
+  "scripts": {
+    "build": "webpack",
+    "build-watch": "npm run build -- -w",
+    "start": "node index.js",
+    "start-watch": "nodemon server/index.js --watch index.js --watch js"
+  },
+  "dependencies": {
+    "airtable": "^0.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "grommet": "^1.5.0",
+    "path": "^0.12.7",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-router-dom": "^4.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "heroku": "^0.2.0",
+    "nodemon": "^1.11.0",
+    "webpack": "^2.4.1"
+  }
+}
