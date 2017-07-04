@@ -26,7 +26,7 @@ module.exports = app
     console.error(err);
   });
 
-db.sync()
+db.sequelize.sync()
   .then(() => {
     const server = app.listen(
       process.env.PORT || 1337,
