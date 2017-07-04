@@ -34,9 +34,11 @@ export default class category extends Component {
   }
 
   render () {
+    let pageTitle = document.getElementsByClassName('grommetux-anchor--active')[0];
+
     return (
       <Section>
-        <Heading tag="h2">{getTitle(this.state.category)}</Heading>
+        <Heading tag="h2">{pageTitle ? pageTitle.innerText : null}</Heading>
         <Tiles fill={true}>
 
           {this.state.links.map(link => {
