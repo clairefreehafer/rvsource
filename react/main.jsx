@@ -24,14 +24,7 @@ render(
         <SidebarMenu />
         <Box pad="large">
           <Route exact path="/" component={Landing}/>
-          <Route path="/apps" component={Apps}/>
-          <Route path="/boondocking" component={Boondocking}/>
-          <Route path="/cold-weather" component={ColdWeather}/>
-          <Route path="/maintenance" component={Maintenance}/>
-          <Route path="/internet" component={Internet}/>
-          <Route path="/mail" component={Mail}/>
-          <Route path="/reno-deco" component={RenoDeco}/>
-          <Route path="/template" component={Template}/>
+          <Route path="/:category" component={Template}/>
         </Box>
       </Split>
     </App>

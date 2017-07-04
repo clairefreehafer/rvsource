@@ -11,10 +11,16 @@ import { getLinks, getTitle } from '../../utils';
 export default class category extends Component {
   constructor (props) {
     super();
+
+    this.state = {
+      links: []
+    };
   }
 
   componentDidMount () {
-    getLinks(this.props.location.pathname);
+    getLinks(this.props.location.pathname)
+      .then(links => (this.setState({ links: links.data })))
+      .catch(console.error);
   }
 
   render () {
@@ -23,24 +29,43 @@ export default class category extends Component {
         <Heading tag="h2">{getTitle(this.props.location.pathname)}</Heading>
         <Tiles fill={true}>
 
-          {/***** tile *****/}
-          <Tile separator="top" align="start" wide={true}>
-            <Header size="small" pad="small">
-              <Heading tag="h3" strong={true} margin="none">
-                <a href={'{url}'}>
-                  {'{title}'}
-                </a> {'{type}'}
-              </Heading>
-            </Header>
-            <Box pad="small">
-              <Paragraph margin="none">
-                by {'{author}'}
-              </Paragraph>
-            </Box>
-          </Tile>
+          {this.state.links.map(link => {
+            return (
+              <Tile separator="top" align="start" wide={true} key={link.id}>
+                <Header size="small" pad="small">
+                  <Heading tag="h3" strong={true} margin="none">
+                    <a href={link.url}>
+                      {link.title}
+                    </a> {link.types}
+                  </Heading>
+                </Header>
+                <Box pad="small">
+                  <Paragraph margin="none">
+                    by {link.author}
+                  </Paragraph>
+                </Box>
+              </Tile>
+            )
+          })}
 
         </Tiles>
       </Section>
     )
   }
 }
+
+          // {/***** tile *****/}
+          // <Tile separator="top" align="start" wide={true}>
+          //   <Header size="small" pad="small">
+          //     <Heading tag="h3" strong={true} margin="none">
+          //       <a href={'{url}'}>
+          //         {'{title}'}
+          //       </a> {'{type}'}
+          //     </Heading>
+          //   </Header>
+          //   <Box pad="small">
+          //     <Paragraph margin="none">
+          //       by {'{author}'}
+          //     </Paragraph>
+          //   </Box>
+          // </Tile>

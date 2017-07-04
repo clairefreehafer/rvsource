@@ -1,9 +1,7 @@
 import axios from 'axios';
 
 export const getLinks = (category) => {
-  console.log(`api${category}`)
-  axios.get(`/api${category}`)
-    .then(console.log)
+  return axios.get(`/api${category}`)
     .catch(console.error);
 }
 
