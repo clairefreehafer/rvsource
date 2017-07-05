@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 
 import { Box, Header, Heading, Paragraph, Section, Tiles, Tile } from 'grommet';
-import Book from 'grommet/components/icons/base/Book';
 import BlogPost from 'grommet/components/icons/base/TextWrap';
-import Video from 'grommet/components/icons/base/Video';
+import Book from 'grommet/components/icons/base/Book';
 import PayWall from 'grommet/components/icons/base/Currency';
+import Video from 'grommet/components/icons/base/Video';
 
 import { getLinks, getTitle } from '../../utils';
 
-export default class category extends Component {
+const iconStyle = {
+  marginLeft: '10px',
+  paddingTop: '10px'
+};
+
+export default class Category extends Component {
   constructor (props) {
     super();
 
@@ -33,6 +38,17 @@ export default class category extends Component {
       .catch(console.error);
   }
 
+  getTypeIcons (typesArr) {
+    const iconComponents = [BlogPost, Book, PayWall, Video];
+    const iconTypes = ['BlogPost', 'Book', 'PayWall', 'Video'];
+
+    return typesArr.map(type => {
+      let compIndex = iconTypes.indexOf(type)
+      let Icon = iconComponents[compIndex];
+      return (<div style={iconStyle}><Icon key={type} /></div>);
+    });
+  }
+
   render () {
     let pageTitle = document.getElementsByClassName('grommetux-anchor--active')[0];
 
@@ -42,14 +58,17 @@ export default class category extends Component {
         <Tiles fill={true}>
 
           {this.state.links.map(link => {
+            let Butt = link.types[0]
+
             return (
               <Tile separator="top" align="start" wide={true} key={link.id}>
                 <Header size="small" pad="small">
                   <Heading tag="h3" strong={true} margin="none">
                     <a href={link.url}>
                       {link.title}
-                    </a> {link.types}
+                    </a>
                   </Heading>
+                  {this.getTypeIcons(link.types)}
                 </Header>
                 <Box pad="small">
                   <Paragraph margin="none">
