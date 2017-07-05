@@ -35,6 +35,7 @@ export default function Landing (props) {
       <Section separator="top">
         <Heading tag="h3">Websites featured</Heading>
         <Menu inline={true} primary={true} size="small" pad="none">
+            <Anchor href="http://www.dreamstreamr.com/">Dreamstreamr</Anchor>
             <Anchor href="http://www.livingintin.com/">Living in Tin</Anchor>
             <Anchor href="http://www.malimish.com/">Mali Mish</Anchor>
             <Anchor href="http://www.technomadia.com/">Technomadia</Anchor>

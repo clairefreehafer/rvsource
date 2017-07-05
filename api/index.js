@@ -13,9 +13,13 @@ router.use('/admin', require('./admin'))
 router.get('/:category', (req, res, next) => {
   // let upperCategory = getCategory(req.params.category);
 
-  models.Link.findAll({ where: {
-    category: req.params.category
-  }})
+  models.Link.findAll({
+    where: {
+      category: req.params.category
+    }, order: [
+      ['title', 'ASC']
+    ]
+  })
     .then(links => res.json(links))
     .catch(next);
 });

@@ -13,7 +13,7 @@ import Template from './components/resources/Template';
 render (
   <BrowserRouter>
     <App centered={false}>
-      <Split flex="right">
+      <Split flex="right" showOnResponsive="both">
         <SidebarMenu />
         <Box pad="large">
           <Route exact path="/" component={Landing} />
