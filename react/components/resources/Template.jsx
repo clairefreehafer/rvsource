@@ -18,21 +18,22 @@ export default class Category extends Component {
     super();
 
     this.state = {
-      category: props.location.pathname.slice(10),
+      category: props.location.pathname,
       links: []
     };
   }
 
-  componentWillMount () {
-    getLinks(this.state.category)
+  componentDidMount () {
+    console.log('rpops', this.props.location.pathname)
+    getLinks(this.props.location.pathname)
       .then(links => (this.setState({ links: links.data })))
       .catch(console.error);
   }
 
   componentWillReceiveProps (newProp) {
-    getLinks(newProp.location.pathname.slice(10))
+    getLinks(newProp.location.pathname)
       .then(links => (this.setState({
-        category: newProp.location.pathname.slice(10),
+        category: newProp.location.pathname,
         links: links.data
       })))
       .catch(console.error);

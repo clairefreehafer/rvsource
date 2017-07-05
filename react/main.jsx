@@ -19,7 +19,7 @@ render(
         <Box pad="large">
           <Route exact path="/" component={Landing} />
           <Route exact path="/admin" component={Admin} />
-          <Route path="/resources/:category" component={Template} />
+          <Route path="/:category" component={Template} />
         </Box>
       </Split>
     </App>

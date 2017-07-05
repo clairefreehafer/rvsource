@@ -13,19 +13,19 @@ export default function SidebarMenu (props) {
       margin="none"
     >
       <Header pad="medium">
-        <Title><Link to="">rvsource</Link></Title>
+        <Title><Link to="">clairstream</Link></Title>
       </Header>
 
       <Menu inline={true} primary={true} size="small">
-        <Label align="center" margin="small">resources</Label>
+        <Label align="center" margin="small">rvsource</Label>
 
-        <Anchor path="/resources/apps">Apps</Anchor>
-        <Anchor path="/resources/boondocking">Boondocking</Anchor>
-        <Anchor path="/resources/cold-weather">Cold Weather</Anchor>
-        <Anchor path="/resources/mail">Mail</Anchor>
-        <Anchor path="/resources/maintenance">Maintenance</Anchor>
-        <Anchor path="/resources/internet">Internet</Anchor>
-        <Anchor path="/resources/reno-deco">Renovating & Decorating</Anchor>
+        <Anchor path="/apps">Apps</Anchor>
+        <Anchor path="/boondocking">Boondocking</Anchor>
+        <Anchor path="/cold-weather">Cold Weather</Anchor>
+        <Anchor path="/mail">Mail</Anchor>
+        <Anchor path="/maintenance">Maintenance</Anchor>
+        <Anchor path="/internet">Internet</Anchor>
+        <Anchor path="/reno-deco">Renovating & Decorating</Anchor>
       </Menu>
     </Sidebar>
   )

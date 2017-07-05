@@ -11,7 +11,15 @@ export default class Admin extends Component {
     this.state = {
       authorSuggestions: [],
       categorySuggestions: ['Apps', 'Boondocking', 'Cold Weather', 'Internet', 'Mail', 'Maintenance', 'Renovating & Deco'],
-      links: []
+      links: [],
+      newLink: {
+        title: null,
+        author: null,
+        url: null,
+        category: null,
+        types: []
+      },
+      password: null
     };
   }
 
@@ -19,6 +27,10 @@ export default class Admin extends Component {
     getAllLinks()
       .then(links => this.setState({ 'links': links.data }))
       .catch(console.error);
+  }
+
+  handleAddingLink () {
+
   }
 
   render () {
