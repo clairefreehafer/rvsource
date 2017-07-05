@@ -52,7 +52,6 @@ export default class Category extends Component {
   render () {
     let pageTitle = document.getElementsByClassName('grommetux-anchor--active')[0];
 
-      console.log(this.state)
     return (
       <Section>
         <Heading tag="h2">{pageTitle ? pageTitle.innerText : null}</Heading>

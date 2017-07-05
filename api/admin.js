@@ -6,7 +6,7 @@ const models = require('../models/db');
 router.get('/', (req, res, next) => {
   console.log('test')
   models.Link.findAll()
-    .then(links => res.json(links.data))
+    .then(links => res.json(links))
     .catch(next);
 });
 

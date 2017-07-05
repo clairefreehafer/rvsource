@@ -17,13 +17,14 @@ export default class Admin extends Component {
 
   componentWillMount () {
     getAllLinks()
-      .then(links => this.setState({ 'links': links }))
-      .then(console.log(this.state.links))
+      .then(links => this.setState({ 'links': links.data }))
       .catch(console.error);
   }
 
   render () {
     const typeOptions = ['BlogPost', 'Book', 'Video', 'PayWall'];
+
+    let allLinks = this.state.links.map(link => `${link.title} by ${link.author}`)
 
     return (
       <Box>
@@ -68,7 +69,7 @@ export default class Admin extends Component {
         </Header>
 
         <FormField label="select article(s)">
-          <Select inline={true} multiple={true} options={['option']} />
+          <Select inline={true} multiple={true} options={allLinks} />
         </FormField>
 
         <FormField label="password">
