@@ -5,8 +5,14 @@ const models = require('../models/db');
 
 router.use('/admin', require('./admin'))
 
+// :category comes in all lowercase, but is stored in the database Uppercase
+// const getCategory = category => {
+//   return category.charAt(0).toUpperCase() + category.slice(1);
+// }
+
 router.get('/:category', (req, res, next) => {
-  console.log('express', '/api/:category');
+  // let upperCategory = getCategory(req.params.category);
+
   models.Link.findAll({ where: {
     category: req.params.category
   }})

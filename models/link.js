@@ -18,6 +18,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     types: {
       type: DataTypes.ARRAY(DataTypes.STRING)
+    },
+    contentUpdated: {
+      type: DataTypes.DATEONLY
     }
   })
 

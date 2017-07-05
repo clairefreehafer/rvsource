@@ -24,7 +24,6 @@ export default class Category extends Component {
   }
 
   componentDidMount () {
-    console.log('rpops', this.props.location.pathname)
     getLinks(this.props.location.pathname)
       .then(links => (this.setState({ links: links.data })))
       .catch(console.error);
@@ -46,7 +45,7 @@ export default class Category extends Component {
     return typesArr.map(type => {
       let compIndex = iconTypes.indexOf(type)
       let Icon = iconComponents[compIndex];
-      return (<div style={iconStyle}><Icon key={type} /></div>);
+      return (<div style={iconStyle} key={type}><Icon /></div>);
     });
   }
 
@@ -59,8 +58,6 @@ export default class Category extends Component {
         <Tiles fill={true}>
 
           {this.state.links.map(link => {
-            let Butt = link.types[0]
-
             return (
               <Tile separator="top" align="start" wide={true} key={link.id}>
                 <Header size="small" pad="small">
