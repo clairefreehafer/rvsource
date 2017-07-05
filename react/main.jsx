@@ -10,7 +10,7 @@ import Admin from './components/Admin';
 
 import Template from './components/resources/Template';
 
-render(
+render (
   <BrowserRouter>
     <App centered={false}>
       <Split flex="right">
