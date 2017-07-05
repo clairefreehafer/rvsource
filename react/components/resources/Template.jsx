@@ -18,7 +18,7 @@ export default class Category extends Component {
     super();
 
     this.state = {
-      category: props.location.pathname,
+      category: props.location.pathname.slice(10),
       links: []
     };
   }
@@ -30,9 +30,9 @@ export default class Category extends Component {
   }
 
   componentWillReceiveProps (newProp) {
-    getLinks(newProp.location.pathname)
+    getLinks(newProp.location.pathname.slice(10))
       .then(links => (this.setState({
-        category: newProp.location.pathname,
+        category: newProp.location.pathname.slice(10),
         links: links.data
       })))
       .catch(console.error);
@@ -52,6 +52,7 @@ export default class Category extends Component {
   render () {
     let pageTitle = document.getElementsByClassName('grommetux-anchor--active')[0];
 
+      console.log(this.state)
     return (
       <Section>
         <Heading tag="h2">{pageTitle ? pageTitle.innerText : null}</Heading>

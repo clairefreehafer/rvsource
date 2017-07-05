@@ -13,9 +13,6 @@ module.exports = app
   // serve api
   .use('/api', require('./api'))
 
-  // admin
-  .use('/admin', require('./api/admin'))
-
   // serve static files
   .use(express.static(resolve(__dirname, 'public')))
 
