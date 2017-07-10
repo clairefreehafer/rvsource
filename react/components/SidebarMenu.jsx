@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Anchor, Header, Label, Menu, Sidebar, Title } from 'grommet';
-// import { Anchor, Header, Label, Menu, Sidebar, Title } from 'grommet';
-
-
 
 export default function SidebarMenu (props) {
   return (

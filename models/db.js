@@ -2,8 +2,10 @@ if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize')
     , sequelize = null
 
+  /**
+   * if setting up heroku, use the postgres database
+   */
   if (process.env.HEROKU_POSTGRESQL_AMBER_URL) {
-    // the application is executed on Heroku ... use the postgres database
     var match = process.env.HEROKU_POSTGRESQL_AMBER_URL.match(/postgres:\/\/([^:]+):([^@]+)@([^:]+):(\d+)\/(.+)/)
 
     sequelize = new Sequelize(match[5], match[1], match[2], {
@@ -16,8 +18,11 @@ if (!global.hasOwnProperty('db')) {
         ssl: true
       }
     })
-  } else {
-    // the application is executed on the local machine ... use mysql
+  }
+  /**
+   * for local development, use mysql
+   */
+  else {
     sequelize = new Sequelize('postgres://localhost:5432/rvsource', { logging: false })
   }
 
@@ -28,4 +33,7 @@ if (!global.hasOwnProperty('db')) {
   }
 }
 
+/**
+ * export database and Link model
+ */
 module.exports = global.db;

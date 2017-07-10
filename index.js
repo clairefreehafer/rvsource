@@ -6,23 +6,37 @@ const app = express();
 const db = require('./models/db');
 
 module.exports = app
-  // body parsing middleware
+  /**
+   * body parsing middleware
+   */
   .use(bodyParser.urlencoded({ extended: false }))
   .use(bodyParser.json())
 
-  // serve api
+  /**
+   * serve the api
+   */
   .use('/api', require('./api'))
 
-  // serve static files
+  /**
+   * serve static files from /public
+   */
   .use(express.static(resolve(__dirname, 'public')))
 
+  /**
+   * serve index.html for the base of every path
+   */
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, 'public', 'index.html')))
 
-  // error handling middleware
+  /**
+   * handle errors
+   */
   .use((err, req, res, next) => {
     console.error(err);
   });
 
+/**
+ * syncronize the database then start the server
+ */
 db.sequelize.sync()
   .then(() => {
     const server = app.listen(
@@ -37,15 +51,3 @@ db.sequelize.sync()
     );
   })
   .catch(console.error);
-
-// var port = 3000;
-// app.listen(port, function () {
-//   console.log('The server is listening closely on port', port);
-//   db.sync()
-//   .then(function () {
-//     console.log('Synchronated the database');
-//   })
-//   .catch(function (err) {
-//     console.error('Trouble right here in River City', err, err.stack);
-//   });
-// });
