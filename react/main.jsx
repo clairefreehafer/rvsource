@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 import 'grommet/scss/hpinc/index';
+import '../public/style';
 
 import { App, Box, Split } from 'grommet';
 import SidebarMenu from './components/SidebarMenu';

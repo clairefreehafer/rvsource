@@ -9,11 +9,6 @@ import Video from 'grommet/components/icons/base/Video';
 
 import { getLinks, getTitle } from '../../utils';
 
-const iconStyle = {
-  marginLeft: '10px',
-  paddingTop: '10px'
-};
-
 export default class Category extends Component {
   constructor (props) {
     super();
@@ -37,6 +32,8 @@ export default class Category extends Component {
   /**
    * every time the url path changes (user clicks to a different page),
    * fetch the new appropriate links and put them on the state
+   *
+   * @param {Object} newProps - updated props
    */
   componentWillReceiveProps (newProp) {
     getLinks(newProp.location.pathname)
@@ -55,6 +52,10 @@ export default class Category extends Component {
    * components to render properly, and cannot simply be a string title like
    * in the iconTypes array. iconTypes is used to match the array returned
    * from the database with each component
+   *
+   * @param {Array} typesArr - the array of types retrieved from the database
+   * for that item
+   * @return JSX elements for the type icons
    */
   getTypeIcons (typesArr) {
     const iconComponents = [BlogPost, Book, Forum, PayWall, Video];
@@ -63,7 +64,7 @@ export default class Category extends Component {
     return typesArr.map(type => {
       let compIndex = iconTypes.indexOf(type);
       let Icon = iconComponents[compIndex];
-      return (<div style={iconStyle} key={type}><Icon /></div>);
+      return (<div className="types-icon" key={type}><Icon /></div>);
     });
   }
 

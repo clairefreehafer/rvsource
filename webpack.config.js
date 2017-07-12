@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './react/main.jsx',
@@ -29,53 +30,28 @@ module.exports = {
         use: [
           {
             loader: 'style-loader'
-          },
-          {
+          }, {
             loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader', options: {
-              includePaths: ['./node_modules']
+          }, {
+            loader: 'sass-loader',
+            options: {
+              includePaths: ['./node_modules', './public']
             }
           }
         ]
       },
+    ],
+    loaders: [
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('css!sass')
+      }
     ]
   },
+  plugins: [
+      new ExtractTextPlugin('public/style.css', {
+          allChunks: true
+      })
+    ]
 };
 
-// const path = require('path');
-
-// module.exports = {
-//   entry: './react/main.jsx',
-//   output: {
-//     path: path.resolve(__dirname, 'public'),
-//     filename: 'bundle.js'
-//   },
-//   module: {
-//     loaders: [{
-//       test: /\.jsx?$/,
-//       loader: 'babel-loader',
-//       exclude: /node_modules/,
-//       query: {
-//         presets: ['es2015', 'react']
-//       },
-//     },
-//       {
-//         test: /\.scss$/,
-//         use: [{
-//           loader: 'style-loader'
-//         }, {
-//           loader: 'css-loader'
-//         }, {
-//           loader: 'sass-loader', options: {
-//             includePaths: ['./node_modules', './node_modules/grommet/node_modules']
-//           }
-//         }]
-//       }
-//     ]
-//   },
-//   resolve: {
-//     extensions: ['.js', '.jsx']
-//   }
-// };
