@@ -49,8 +49,9 @@ module.exports = {
     ]
   },
   plugins: [
-      new ExtractTextPlugin('public/style.css', {
-          allChunks: true
+      new ExtractTextPlugin({
+        filename: "style.css",
+        disable: process.env.NODE_ENV === "development"
       })
     ]
 };

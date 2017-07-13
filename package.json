@@ -6,7 +6,7 @@
   "author": "Claire Freehafer <claire.freehafer@gmail.com>",
   "license": "MIT",
   "engines": {
-    "node": "7.6.0"
+    "node": "6.11.0"
   },
   "scripts": {
     "build": "webpack",
