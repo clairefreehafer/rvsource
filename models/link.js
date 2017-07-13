@@ -6,7 +6,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     author: {
       type: DataTypes.STRING,
-      allowNull: false
     },
     url: {
       type: DataTypes.STRING,

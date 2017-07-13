@@ -101,11 +101,13 @@ export default class Category extends Component {
                    */}
                   {this.getTypeIcons(link.types)}
                 </Header>
+                {link.author ?
                 <Box pad="small">
                   <Paragraph margin="none">
                     by {link.author}
                   </Paragraph>
                 </Box>
+                : null}
               </Tile>
             )
           })}

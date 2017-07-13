@@ -26,6 +26,7 @@ export default function SidebarMenu (props) {
         <Anchor path="/internet">Internet</Anchor>
         <Anchor path="/reno-deco">Renovating & Decorating</Anchor>
         <Anchor path="/solar">Solar</Anchor>
+        <Anchor path="/towing">Towing</Anchor>
         <Anchor path="/water">Water</Anchor>
       </Menu>
     </Sidebar>
