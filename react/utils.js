@@ -27,8 +27,7 @@ export const getAllLinks = () => {
     .catch(console.error);
 }
 
-
-export const months = ['', 'January', 'February', 'March', 'April', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+export const months = ['', 'January', 'February', 'March', 'April', 'May','June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 /**
  * potential category descriptions... need revising

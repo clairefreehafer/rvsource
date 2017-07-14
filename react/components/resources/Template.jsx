@@ -81,7 +81,7 @@ export default class Category extends Component {
     return (
       <Box pad="small" align="end">
         <Paragraph margin="none" size="small">
-          created/last updated on {months[parseInt(date[1], 10)]} {parseInt(date[2], 10)}, {date[0]}
+          created/last updated<br />{months[parseInt(date[1], 10)]} {parseInt(date[2], 10)}, {date[0]}
         </Paragraph>
       </Box>
     )
@@ -110,7 +110,7 @@ export default class Category extends Component {
               <Tile separator="top" align="start" wide={true} key={link.id}>
                 <Header size="small" pad="small">
                   <Heading tag="h3" strong={true} margin="none">
-                    <a href={link.url}>
+                    <a href={link.url} target="_blank">
                       {link.title}
                     </a>
                   </Heading>
@@ -120,7 +120,7 @@ export default class Category extends Component {
                    */}
                   {this.getTypeIcons(link.types)}
                 </Header>
-                <Columns size="small" justify="between" responsive={false}>
+                <Columns size="small" justify="between">
 
                    {/**
                     * author

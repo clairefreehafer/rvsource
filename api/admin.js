@@ -11,18 +11,19 @@ router.get('/', (req, res, next) => {
     .catch(next);
 });
 
-
 /**
  * add an article from the admin panel
  */
 router.post('/', (req, res, next) => {
-  models.Link.destroy({
-    where: {
-      title: ''
-    }
-  })
-    .then(res.sendStatus(200))
-    .catch(next);
+  console.log(req.params)
+  res.sendStatus(200)
+  // models.Link.create({
+  //   where: {
+  //     title: ''
+  //   }
+  // })
+  //   .then(res.sendStatus(200))
+  //   .catch(next);
 })
 
 module.exports = router;
