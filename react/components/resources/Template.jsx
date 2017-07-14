@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import { Box, Header, Heading, Paragraph, Section, Tiles, Tile } from 'grommet';
+import { Box, Columns, Header, Heading, Paragraph, Section, Tiles, Tile } from 'grommet';
 import BlogPost from 'grommet/components/icons/base/TextWrap';
 import Book from 'grommet/components/icons/base/Book';
 import Forum from 'grommet/components/icons/base/Database';
 import PayWall from 'grommet/components/icons/base/Currency';
 import Video from 'grommet/components/icons/base/Video';
 
-import { getLinks, getTitle } from '../../utils';
+import { getLinks, getTitle, months } from '../../utils';
 
 export default class Category extends Component {
   constructor (props) {
@@ -17,6 +17,8 @@ export default class Category extends Component {
       category: props.location.pathname,
       links: []
     };
+
+    this.printLastUpdated = this.printLastUpdated.bind(this);
   }
 
   /**
@@ -54,7 +56,7 @@ export default class Category extends Component {
    * from the database with each component
    *
    * @param {Array} typesArr - the array of types retrieved from the database
-   * for that item
+   * for the item
    * @return JSX elements for the type icons
    */
   getTypeIcons (typesArr) {
@@ -66,6 +68,23 @@ export default class Category extends Component {
       let Icon = iconComponents[compIndex];
       return (<div className="types-icon" key={type}><Icon /></div>);
     });
+  }
+
+  /**
+   * convert number date
+   *
+   * @param {String} dateStr - 'YYYY-MM-DD'
+   */
+  printLastUpdated (dateStr) {
+    let date = dateStr.split('-');
+
+    return (
+      <Box pad="small" align="end">
+        <Paragraph margin="none" size="small">
+          created/last updated on {months[parseInt(date[1], 10)]} {parseInt(date[2], 10)}, {date[0]}
+        </Paragraph>
+      </Box>
+    )
   }
 
   render () {
@@ -101,13 +120,25 @@ export default class Category extends Component {
                    */}
                   {this.getTypeIcons(link.types)}
                 </Header>
-                {link.author ?
-                <Box pad="small">
-                  <Paragraph margin="none">
-                    by {link.author}
-                  </Paragraph>
-                </Box>
-                : null}
+                <Columns size="small" justify="between" responsive={false}>
+
+                   {/**
+                    * author
+                    */}
+                  {link.author ?
+                  <Box pad="small">
+                    <Paragraph margin="none">
+                      by {link.author}
+                    </Paragraph>
+                  </Box>
+                  : null}
+
+                  {/**
+                   * created/last updated
+                   */}
+                  {link.contentUpdated ? this.printLastUpdated(link.contentUpdated)
+                  : null}
+                </Columns>
               </Tile>
             )
           })}

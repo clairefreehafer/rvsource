@@ -11,7 +11,7 @@ export const getLinks = (category) => {
 }
 
 /**
- * get the page title
+ * get the page title. not currently in use
  * @param {string} pathname
  * @return {string} with proper capitalization
  */
@@ -25,4 +25,27 @@ export const getTitle = (pathname) => {
 export const getAllLinks = () => {
   return axios.get('/api/admin')
     .catch(console.error);
+}
+
+
+export const months = ['', 'January', 'February', 'March', 'April', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+/**
+ * potential category descriptions... need revising
+ */
+export const categoryDescriptions = {
+  apps: 'Phone applications for various tasks.',
+  'av-systems': 'Electronics for TV and stereo systems.',
+  boondocking: 'Tips for living off the grid.',
+  'cold-weather': 'How to deal with the worst season',
+  internet: 'Getting internet wherever you go.',
+  maintenance: 'Tips for when things go wrong.',
+  'miscellaneous-gear': 'Any other sorts of products.',
+  organization: 'How to make use of every inch of space.',
+  outdoors: 'Actual camping gear.',
+  'reno-deco': 'Ideas for renovating and decorating.',
+  solar: 'How to manage solar systems.',
+  towing: 'Tow vehicles and hitches.',
+  water: 'How to conserve.',
+
 }

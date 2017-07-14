@@ -50,7 +50,7 @@ export default class Admin extends Component {
           </FormField>
 
           <FormField label="author">
-            <TextInput suggestions={this.state.authorSuggestions} />
+            <TextInput />
           </FormField>
 
           <FormField label="url">
@@ -58,11 +58,12 @@ export default class Admin extends Component {
           </FormField>
 
           <FormField label="category">
-            <TextInput suggestions={this.state.categorySuggestions} />
+            <TextInput />
           </FormField>
 
           <FormField label="types">
-            <Select inline={true} multiple={true} options={typeOptions} />
+            {/* <Select inline={true} multiple={true} options={typeOptions} /> */}
+            <TextInput />
           </FormField>
 
           <FormField label="password">
