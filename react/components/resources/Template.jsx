@@ -14,7 +14,7 @@ export default class Category extends Component {
     super();
 
     this.state = {
-      category: props.location.pathname,
+      category: props.location.pathname.slice(9),
       links: []
     };
 
@@ -26,7 +26,7 @@ export default class Category extends Component {
    * from the database. then put them on the state.
   */
   componentDidMount () {
-    getLinks(this.props.location.pathname)
+    getLinks(this.props.location.pathname.slice(9))
       .then(links => (this.setState({ links: links.data })))
       .catch(console.error);
   }
@@ -38,9 +38,9 @@ export default class Category extends Component {
    * @param {Object} newProps - updated props
    */
   componentWillReceiveProps (newProp) {
-    getLinks(newProp.location.pathname)
+    getLinks(newProp.location.pathname.slice(9))
       .then(links => (this.setState({
-        category: newProp.location.pathname,
+        category: newProp.location.pathname.slice(9),
         links: links.data
       })))
       .catch(console.error);
@@ -148,3 +148,6 @@ export default class Category extends Component {
     )
   }
 }
+
+
+

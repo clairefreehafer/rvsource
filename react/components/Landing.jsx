@@ -6,7 +6,7 @@ import BlogPost from 'grommet/components/icons/base/TextWrap';
 import Forum from 'grommet/components/icons/base/Database';
 import Video from 'grommet/components/icons/base/Video';
 import PayWall from 'grommet/components/icons/base/Currency';
-import GitHub from 'grommet/components/icons/base/socialGithub';
+import GitHub from 'grommet/components/icons/base/SocialGithub';
 
 export default function Landing (props) {
   return (
@@ -43,11 +43,12 @@ export default function Landing (props) {
         <Menu inline={true} primary={true} size="small" pad="none">
           <Anchor href="http://www.airforums.com/" target="_blank">Air Forums</Anchor>
           <Anchor href="http://www.dreamstreamr.com/" target="_blank">Dreamstreamr</Anchor>
-          <Anchor hrev="http://www.gonewiththewynns.com/" target="_blank">Gone with the Wynns</Anchor>
+          <Anchor href="http://www.gonewiththewynns.com/" target="_blank">Gone with the Wynns</Anchor>
           <Anchor href="http://www.livingintin.com/" target="_blank">Living in Tin</Anchor>
           <Anchor href="http://www.malimish.com/" target="_blank">Mali Mish</Anchor>
           <Anchor href="http://www.technomadia.com/" target="_blank">Technomadia</Anchor>
           <Anchor href="http://www.weaselmouth.com/" target="_blank">WeaselMouth</Anchor>
+          <Anchor href="http://wheelingit.us" target="_blank">Wheeling It</Anchor>
         </Menu>
       </Section>
 
