@@ -33,6 +33,11 @@ export default function SidebarMenu (props) {
         <Anchor path="/rvsource/towing">Towing</Anchor>
         <Anchor path="/rvsource/water">Water</Anchor>
         <Anchor path="/rvsource/weather">Weather</Anchor>
+
+
+        <Label align="center" margin="small">Tow Vehicles</Label>
+        <Anchor path="/tow-vehicle/nissan-armada">Nissan Armada</Anchor>
+        <Anchor path="/tow-vehicle/toyota-land-cruiser">Toyota Land Cruiser</Anchor>
       </Menu>
     </Sidebar>
   )
