@@ -29,8 +29,10 @@ router.get('/link/:category', (req, res, next) => {
     .catch(next);
 });
 
-router.get('/tow-vehicle', (req, res, next) => {
-  models.TowVehicle.findAll()
+router.get('/tow-vehicles', (req, res, next) => {
+  models.TowVehicle.findAll({
+    order: [['type', 'ASC']]
+  })
   .then(towVehicles => res.json(towVehicles))
   .catch(next);
 })

@@ -11,6 +11,15 @@ export const getLinks = (category) => {
 }
 
 /**
+ * get all tow vehicles in db
+ * @return {Promise} - list of tow vehicles
+ */
+export const getTowVehicles = () => {
+  return axios.get('/api/tow-vehicles')
+    .catch(console.error);
+}
+
+/**
  * get the page title. not currently in use
  * @param {string} pathname
  * @return {string} with proper capitalization

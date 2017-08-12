@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Anchor, Box, Columns, Heading, Hero, Image, Paragraph, Section, Table, TableHeader, TableRow } from 'grommet';
+import { Heading, Section, Table, TableHeader, TableRow } from 'grommet';
+
+import { getTowVehicles } from '../../utils';
 
 export default class TowVehicle extends React.Component {
   constructor (props) {
@@ -8,10 +10,21 @@ export default class TowVehicle extends React.Component {
 
     this.state = {
       sortIndex: 0,
-      sortAscending: true
+      sortAscending: true,
+      towVehicles: []
     }
 
     this.tableOnSort = this.tableOnSort.bind(this);
+  }
+
+  componentWillMount () {
+    getTowVehicles()
+    .then(res => {
+      this.setState({
+        towVehicles: res.data
+      })
+    })
+    .catch(console.error);
   }
 
   tableOnSort (sortIndex, sortAscending) {
@@ -22,6 +35,7 @@ export default class TowVehicle extends React.Component {
   }
 
   render () {
+    console.log(this.state)
     return (
       <Section>
         <Heading>Tow Vehicles</Heading>
