@@ -6,7 +6,7 @@ import axios from 'axios';
  * @return {Promise} all links for that category
  */
 export const getLinks = (category) => {
-  return axios.get(`/api${category}`)
+  return axios.get(`/api/link${category}`)
     .catch(console.error);
 }
 

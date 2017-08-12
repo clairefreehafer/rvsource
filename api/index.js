@@ -15,7 +15,7 @@ const getCategory = category => {
 /**
  * retrieve all links of a particular category for each page
  */
-router.get('/:category', (req, res, next) => {
+router.get('/link/:category', (req, res, next) => {
   // let upperCategory = getCategory(req.params.category);
 
   models.Link.findAll({
@@ -28,5 +28,11 @@ router.get('/:category', (req, res, next) => {
     .then(links => res.json(links))
     .catch(next);
 });
+
+router.get('/tow-vehicle', (req, res, next) => {
+  models.TowVehicle.findAll()
+  .then(towVehicles => res.json(towVehicles))
+  .catch(next);
+})
 
 module.exports = router;
