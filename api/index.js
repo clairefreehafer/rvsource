@@ -35,6 +35,6 @@ router.get('/tow-vehicles', (req, res, next) => {
   })
   .then(towVehicles => res.json(towVehicles))
   .catch(next);
-})
+});
 
 module.exports = router;

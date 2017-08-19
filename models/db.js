@@ -29,8 +29,11 @@ if (!global.hasOwnProperty('db')) {
   global.db = {
     Sequelize: Sequelize,
     sequelize: sequelize,
-    Link:      sequelize.import(__dirname + '/link'),
-    TowVehicle:      sequelize.import(__dirname + '/towVehicle')
+    Link: sequelize.import(__dirname + '/link'),
+    TowVehicle: sequelize.import(__dirname + '/towVehicle'),
+    Van: sequelize.import(__dirname + '/van'),
+    SUV: sequelize.import(__dirname + '/suv'),
+    Hybrid: sequelize.import(__dirname + '/hybrid'),
   }
 }
 

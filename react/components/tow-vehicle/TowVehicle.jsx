@@ -35,12 +35,14 @@ export default class TowVehicle extends React.Component {
   }
 
   render () {
+    var tableLabels = ['Type', 'Make', 'Model', 'Max. Tow Rating', 'Starting MSRP', 'Fuel Economy (city/hwy)', 'Length', 'Wheelbase'];
+
     console.log(this.state)
     return (
       <Section>
         <Heading>Tow Vehicles</Heading>
         <Table>
-          <TableHeader labels={['Type', 'Make', 'Model', 'Max. Tow Rating', 'Starting MSRP', 'Fuel Economy (city/hwy)', 'Length', 'Wheelbase']}
+          <TableHeader labels={tableLabels}
             sortIndex={this.state.sortIndex}
             sortAscending={this.state.sortAscending}
             onSort={this.tableOnSort}
