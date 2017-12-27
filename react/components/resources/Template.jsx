@@ -60,13 +60,13 @@ export default class Category extends Component {
    * @return JSX elements for the type icons
    */
   getTypeIcons (typesArr) {
-    const iconComponents = [BlogPost, Book, Forum, PayWall, Video];
+    const iconComponents = ['create', 'book', 'dns', 'attach_money', 'videocam'];
     const iconTypes = ['BlogPost', 'Book', 'Forum', 'PayWall', 'Video'];
 
     return typesArr.map(type => {
       let compIndex = iconTypes.indexOf(type);
       let Icon = iconComponents[compIndex];
-      return (<div className="types-icon" key={type}><Icon /></div>);
+      return (<div className="types-icon" key={type}><i className="material-icons">{Icon}</i></div>);
     });
   }
 
