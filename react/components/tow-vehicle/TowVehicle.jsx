@@ -14,7 +14,7 @@ export default class TowVehicle extends React.Component {
       towVehicles: []
     }
 
-    this.tableOnSort = this.tableOnSort.bind(this);
+    // this.tableOnSort = this.tableOnSort.bind(this);
   }
 
   componentWillMount () {
@@ -27,12 +27,21 @@ export default class TowVehicle extends React.Component {
     .catch(console.error);
   }
 
-  tableOnSort (sortIndex, sortAscending) {
-    this.setState({
-      sortIndex: sortIndex,
-      sortAscending: sortAscending
-    });
-  }
+  // tableOnSort (sortIndex, sortAscending) {
+  //   let columnToSortBy = tableLabels[sortIndex],
+  //   sortedTowVehicles = this.state.towVehicles.sort((a, b) => {
+  //     if (a.last_nom < b.last_nom)
+  //       return -1;
+  //     if (a.last_nom > b.last_nom)
+  //       return 1;
+  //     return 0;
+  //   })
+
+  //   this.setState({
+  //     sortIndex: sortIndex,
+  //     sortAscending: sortAscending
+  //   });
+  // }
 
   render () {
     var tableLabels = ['Type', 'Make', 'Model', 'Max. Tow Rating', 'Starting MSRP', 'Fuel Economy (city/hwy)', 'Length', 'Wheelbase'];

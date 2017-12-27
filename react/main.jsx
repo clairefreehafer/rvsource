@@ -11,6 +11,7 @@ import Admin from './components/Admin';
 import TowVehicle from './components/tow-vehicle/TowVehicle';
 import ToyotaLandCruiser from './components/tow-vehicle/ToyotaLandCruiser';
 import NissanArmada from './components/tow-vehicle/NissanArmada';
+import Hybrids from './components/tow-vehicle/Hybrids';
 
 import Template from './components/resources/Template';
 
@@ -24,6 +25,7 @@ render (
           <Route exact path="/admin" component={Admin} />
           <Route path="/rvsource/:category" component={Template} />
           <Route exact path="/tow-vehicle" component={TowVehicle} />
+          <Route path="/tow-vehicles/hybrids" component={Hybrids} />
           <Route path="/tow-vehicle/toyota-land-cruiser" component={ToyotaLandCruiser} />
           <Route path="/tow-vehicle/nissan-armada" component={NissanArmada} />
         </Box>

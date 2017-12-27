@@ -15,12 +15,21 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: false
     },
+    loadCapacity: {
+      type: DataTypes.INTEGER
+    },
     msrp: {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    fuelEconomy: {
+    mpg: {
       type: DataTypes.ARRAY(DataTypes.INTEGER)
+    },
+    fuelCapacity: {
+      type: DataTypes.INTEGER
+    },
+    fuelType: {
+      type: DataTypes.STRING
     },
     length: {
       type: DataTypes.ARRAY(DataTypes.INTEGER),
