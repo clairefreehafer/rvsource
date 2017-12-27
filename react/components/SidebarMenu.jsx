@@ -10,11 +10,11 @@ export default function SidebarMenu (props) {
       margin="none"
     >
       <Header pad="medium">
-        <Title><Link to="">clairstream</Link></Title>
+        <Title><Link to="">rvsource</Link></Title>
       </Header>
 
       <Menu inline={true} primary={true} size="small">
-        <Label align="center" margin="small">rvsource</Label>
+        {/*<Label align="center" margin="small">rvsource</Label>*/}
 
         <Anchor path="/rvsource/apps">Apps</Anchor>
         {/* <Anchor path="/electricity">Electrical</Anchor> */}

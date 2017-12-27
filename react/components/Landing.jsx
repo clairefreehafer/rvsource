@@ -42,6 +42,7 @@ export default function Landing (props) {
         <Heading tag="h3">Websites featured</Heading>
         <Menu inline={true} primary={true} size="small" pad="none">
           <Anchor href="http://www.airforums.com/" target="_blank">Air Forums</Anchor>
+          <Anchor href="http://www.campaddict.com/" target="_blank">Camp Addict</Anchor>
           <Anchor href="http://www.dreamstreamr.com/" target="_blank">Dreamstreamr</Anchor>
           <Anchor href="http://www.gonewiththewynns.com/" target="_blank">Gone with the Wynns</Anchor>
           <Anchor href="http://www.livingintin.com/" target="_blank">Living in Tin</Anchor>

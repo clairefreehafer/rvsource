@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-import 'grommet/scss/vanilla/index';
+import 'grommet/scss/hpinc/index'; // aruba, grommet-core, hpe, hpinc, vanilla
 import '../public/style';
 
 import { App, Box, Split } from 'grommet';
