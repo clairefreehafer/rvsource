@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto|Material+Icons');
 
 .grommet {
   font-family: 'Roboto', sans-serif;
@@ -6,6 +6,10 @@
 
 .grommetux-heading, .grommetux-title {
   font-family: 'Roboto Condensed', sans-serif;
+}
+
+.material-icons {
+  vertical-align: middle
 }
 
 .types-icon {

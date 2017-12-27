@@ -8,10 +8,11 @@ import Video from 'grommet/components/icons/base/Video';
 import PayWall from 'grommet/components/icons/base/Currency';
 import GitHub from 'grommet/components/icons/base/SocialGithub';
 
+import SearchBar from './SearchBar';
+
 export default function Landing (props) {
   return (
     <Box>
-
       <Section>
         <Heading>Welcome to rvsource</Heading>
         <Paragraph>
@@ -26,7 +27,7 @@ export default function Landing (props) {
 
       {/**
        * key for symbols used with each link
-       */}
+      */}
       <Section separator="top">
         <Heading tag="h3" margin="none">Symbols key</Heading>
           <Tiles flush={false} size="medium">
@@ -39,7 +40,7 @@ export default function Landing (props) {
       </Section>
 
       <Section separator="top">
-        <Heading tag="h3">Websites featured</Heading>
+        <Heading tag="h3">Websites featured <i className="material-icons">open_in_new</i></Heading>
         <Menu inline={true} primary={true} size="small" pad="none">
           <Anchor href="http://www.airforums.com/" target="_blank">Air Forums</Anchor>
           <Anchor href="http://www.campaddict.com/" target="_blank">Camp Addict</Anchor>
@@ -53,11 +54,14 @@ export default function Landing (props) {
         </Menu>
       </Section>
 
-      <Footer justify="end">
-        <Anchor href="https://www.github.com/clairefreehafer/rvsource" target="_blank">
-          View my guts on GitHub
-        </Anchor>
-        &nbsp;<GitHub />
+      <Footer justify="between">
+        <SearchBar />
+        <Box direction="row">
+          <Anchor href="https://www.github.com/clairefreehafer/rvsource" target="_blank">
+            View my guts on GitHub
+          </Anchor>
+          &nbsp;<GitHub />
+        </Box>
       </Footer>
 
     </Box>
