@@ -38,7 +38,7 @@ export default class Category extends Component {
    * @param {Object} newProps - updated props
    */
   componentWillReceiveProps (newProp) {
-    getLinks(newProp.location.pathname.slice(9))
+    getLinks(newProp.location.pathname)
       .then(links => (this.setState({
         category: newProp.location.pathname.slice(9),
         links: links.data
