@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Anchor, Header, Label, Menu, Sidebar, Title } from 'grommet';
 
+import SearchBar from './SearchBar';
+
 export default function SidebarMenu (props) {
   return (
     <Sidebar
@@ -12,7 +14,6 @@ export default function SidebarMenu (props) {
       <Header pad="medium">
         <Title><Link to="">rvsource</Link></Title>
       </Header>
-
       <Menu inline={true} primary={true} size="small">
         {/*<Label align="center" margin="small">rvsource</Label>*/}
 
@@ -40,6 +41,13 @@ export default function SidebarMenu (props) {
         <Anchor path="/tow-vehicles/hybrids">Hybrids</Anchor>
         <Anchor path="/tow-vehicles/vans">Vans</Anchor>
       */}
+      </Menu>
+      <SearchBar />
+
+      <Menu inline={true} primary={true} size="small">
+        {/*<Label align="center" margin="small">rvsource</Label>*/}
+
+        <Anchor path="/about">About</Anchor>
       </Menu>
     </Sidebar>
   )

@@ -54,16 +54,6 @@ export default function Landing (props) {
         </Menu>
       </Section>
 
-      <Footer justify="between">
-        <SearchBar />
-        <Box direction="row">
-          <Anchor href="https://www.github.com/clairefreehafer/rvsource" target="_blank">
-            View my guts on GitHub
-          </Anchor>
-          &nbsp;<GitHub />
-        </Box>
-      </Footer>
-
     </Box>
   )
 }

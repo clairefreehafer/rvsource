@@ -11,6 +11,7 @@ import Admin from './components/Admin';
 import About from './components/About';
 
 import Template from './components/resources/Template';
+import SiteFooter from './components/SiteFooter';
 
 render (
   <BrowserRouter>

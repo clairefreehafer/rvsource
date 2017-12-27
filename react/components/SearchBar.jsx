@@ -1,9 +1,11 @@
 import React from 'react';
 
-import { Search } from 'grommet';
+import { Box, Search } from 'grommet';
 
 export default function SearchBar (props) {
   return (
-    <Search placeHolder="Coming soon!" inline />
+    <Box  pad="medium">
+      <Search placeHolder="Coming soon!" inline />
+    </Box>
   )
 }
