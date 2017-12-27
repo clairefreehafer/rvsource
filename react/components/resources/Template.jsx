@@ -26,7 +26,7 @@ export default class Category extends Component {
    * from the database. then put them on the state.
   */
   componentDidMount () {
-    getLinks(this.props.location.pathname.slice(9))
+    getLinks(this.props.location.pathname)
       .then(links => (this.setState({ links: links.data })))
       .catch(console.error);
   }

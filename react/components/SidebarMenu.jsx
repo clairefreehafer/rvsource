@@ -16,23 +16,23 @@ export default function SidebarMenu (props) {
       <Menu inline={true} primary={true} size="small">
         {/*<Label align="center" margin="small">rvsource</Label>*/}
 
-        <Anchor path="/rvsource/apps">Apps</Anchor>
+        <Anchor path="/apps">Apps</Anchor>
         {/* <Anchor path="/electricity">Electrical</Anchor> */}
-        <Anchor path="/rvsource/camping">Camping</Anchor>
-        <Anchor path="/rvsource/electronics">Electronics</Anchor> {/* electrical */}
-        <Anchor path="/rvsource/internet">Internet</Anchor>
+        <Anchor path="/camping">Camping</Anchor>
+        <Anchor path="/electronics">Electronics</Anchor> {/* electrical */}
+        <Anchor path="/internet">Internet</Anchor>
         {/* <Anchor path="/advice">General Advice</Anchor> */}
-        <Anchor path="/rvsource/logistics">Logistics</Anchor>
-        <Anchor path="/rvsource/maintenance">Maintenance</Anchor>
-        <Anchor path="/rvsource/miscellaneous-gear">Miscellaneous Gear</Anchor>
-        <Anchor path="/rvsource/organization">Organization</Anchor>
+        <Anchor path="/logistics">Logistics</Anchor>
+        <Anchor path="/maintenance">Maintenance</Anchor>
+        <Anchor path="/miscellaneous-gear">Miscellaneous Gear</Anchor>
+        <Anchor path="/organization">Organization</Anchor>
         {/* <Anchor path="/outdoors">Outdoors</Anchor> */}
-        <Anchor path="/rvsource/pets">Pets</Anchor>
-        <Anchor path="/rvsource/reno-deco">Renovating & Decorating</Anchor>
-        <Anchor path="/rvsource/solar">Solar</Anchor> {/* electrical */}
-        <Anchor path="/rvsource/towing">Towing</Anchor>
-        <Anchor path="/rvsource/water">Water</Anchor>
-        <Anchor path="/rvsource/weather">Weather</Anchor>
+        <Anchor path="/pets">Pets</Anchor>
+        <Anchor path="/reno-deco">Renovating & Decorating</Anchor>
+        <Anchor path="/solar">Solar</Anchor> {/* electrical */}
+        <Anchor path="/towing">Towing</Anchor>
+        <Anchor path="/water">Water</Anchor>
+        <Anchor path="/weather">Weather</Anchor>
 
       {/*
         <Label align="center" margin="small">Tow Vehicles</Label>

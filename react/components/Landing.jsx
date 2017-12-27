@@ -14,7 +14,7 @@ export default function Landing (props) {
           RVing is rapidly gaining in popularity as a relatively cheap and easy way to get out and see the world. Many of these travellers have started blogs or YouTube channels in order to share their adventures and inspire others to hit the road. In the past several years there has been an explosion of online content related to all aspects of RVing, which is wonderful for future RVers like myself. I aim to collect as many of these different resources as possible and organize them in a way that is less intimidating to sift through than a simple Google or YouTube search.
         </Paragraph>
 
-        <Paragraph size="small">
+        <Paragraph>
           Because of my own personal interests, the content of this site might lean towards full-timing and Airstreams.
           ¯\_(ツ)_/¯
         </Paragraph>

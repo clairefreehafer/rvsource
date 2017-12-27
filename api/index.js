@@ -17,6 +17,7 @@ const getCategory = category => {
  */
 router.get('/link/:category', (req, res, next) => {
   // let upperCategory = getCategory(req.params.category);
+  console.log('ok',req.params)
 
   models.Link.findAll({
     where: {
