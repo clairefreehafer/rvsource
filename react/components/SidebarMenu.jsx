@@ -12,7 +12,7 @@ export default function SidebarMenu (props) {
       margin="none"
     >
       <Header pad="medium">
-        <Title><Link to="">rvsource</Link></Title>
+        <Title><Link to=""><i className="material-icons md-48">rv_hookups</i>rvsource</Link></Title>
       </Header>
       <Menu inline={true} primary={true} size="small">
         {/*<Label align="center" margin="small">rvsource</Label>*/}

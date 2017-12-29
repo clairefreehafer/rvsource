@@ -34,6 +34,7 @@ export default function About (props) {
             <li>filter by author</li>
             <li>sorting options</li>
             <li>more visually interesting lists, somehow</li>
+            <li>tags?!</li>
             <li>???</li>
           </ul>
       </Section>
