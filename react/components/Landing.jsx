@@ -4,6 +4,7 @@ import { Anchor, Box, Footer, Heading, Menu, Section, Paragraph, Tile, Tiles } f
 import GitHub from 'grommet/components/icons/base/SocialGithub';
 
 import SearchBar from './SearchBar';
+import Symbols from './landing/Symbols';
 
 export default function Landing (props) {
   return (
@@ -28,19 +29,10 @@ export default function Landing (props) {
       {/**
        * key for symbols used with each link
       */}
-      <Section separator="top">
-        <Heading tag="h3" margin="none">Symbols key</Heading>
-          <Tiles flush={false} size="medium">
-            <Tile><i className="material-icons md-36">book</i> Book</Tile>
-            <Tile><i className="material-icons md-36">create</i> Blog Post</Tile>
-            <Tile><i className="material-icons md-36">dns</i> Forum</Tile>
-            <Tile><i className="material-icons md-36">videocam</i> Video</Tile>
-            <Tile><i className="material-icons md-36">attach_money</i> Not Free</Tile>
-          </Tiles>
-      </Section>
+      <Symbols />
 
       <Section separator="top">
-        <Heading tag="h3">Websites featured <i className="material-icons">open_in_new</i></Heading>
+        <Heading tag="h3">Content Creators <i className="material-icons">open_in_new</i></Heading>
         <Menu inline={true} primary={true} size="small" pad="none">
           <Anchor href="http://www.airforums.com/" target="_blank">Air Forums</Anchor>
           <Anchor href="http://www.campaddict.com/" target="_blank">Camp Addict</Anchor>
